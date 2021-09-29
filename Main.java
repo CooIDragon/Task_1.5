@@ -4,26 +4,39 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
+        
+        System.out.print("Введите число n = ");
+        double n = readN();
 
-        System.out.print("Введите радиус: R = ");
-        double r = readRadius();
+        System.out.print("Введите число k = ");
+        int k = readK();
 
-        System.out.println("Площадь заштрихованной фигуры S = " + countSol(r));
+        System.out.println("Пример с введенными данными будет равен = " + calcSol(n, k));
     }
-    
-    private static double readRadius() {
+
+    private static int readK() {
         Scanner sc = new Scanner(System.in);
 
-        double n = sc.nextDouble();
-        if (n <= 0) {
-            System.out.println("Error: R <= 0");
-            System.exit(0);
-        }
-        return n;
+        int k;
+        return  k = sc.nextInt();
     }
-    
-    private static double countSol(double n) {
-        return (((n * 2 * n * 2) - (Math.PI * n * n)) / 2);
+
+    private static int readN() {
+        Scanner sc = new Scanner(System.in);
+
+        int n;
+        return  n = sc.nextInt();
+    }
+
+    private static double calcSol(double n, int k) {
+        double a = 0;
+
+        for (int i = 1; i <= n; i++) {
+            a += Math.pow(i, k);
+            System.out.println(i);
+            System.out.println(a);
+        }
+
+        return a;
     }
 }
-
