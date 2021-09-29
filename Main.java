@@ -10,6 +10,7 @@ public class Main {
 
         System.out.println("Площадь заштрихованной фигуры S = " + countSol(r));
     }
+    
     private static double readRadius() {
         Scanner sc = new Scanner(System.in);
 
@@ -20,6 +21,7 @@ public class Main {
         }
         return n;
     }
+    
     private static double countSol(double n) {
         return (((n * 2 * n * 2) - (Math.PI * n * n)) / 2);
     }
